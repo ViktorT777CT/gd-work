@@ -1,16 +1,24 @@
-@charset "UTF-8"
+$color-white: rgb(255, 255, 255)
+$color-red: rgb(226, 26, 26)
+$color-gray: rgb(118, 125, 137)
+$svg-white: invert(100%) sepia(0%) saturate(7500%) hue-rotate(19deg) brightness(99%) contrast(102%)
+
 
 body
   font-family: 'IBM Plex Sans', arial
   margin: 0
   padding: 0
+  background-color: rgb(245, 245, 245)
 a
   text-decoration: none
 li
   list-style-type: none
-#bg_slider
+
+#bg_slider-main
+  position: absolute
+  z-index: -5
   width: 100%
-  height: 100vh
+  top: 0
   background-position: center center
   background-size: cover
   background-repeat: no-repeat
@@ -18,26 +26,373 @@ li
   animation: bgSlide 8s linear infinite 0s
   animation-timing-function: ease-in-out
   background-image: url(img/bg.png)
+  height: 55vh
 @keyframes bgSlide
   0%
     background-image: url(img/bg.png)
   25%
     background-image: url(img/bg.png)
   50%
+    background-image: url(img/bg_w.png)
+  75%
+    background-image: url(img/bg_w.png)
+  100%
+    background-image: url(img/bg.png)
+#bg_slider-website
+  position: absolute
+  z-index: -5
+  top: 0
+  width: 100%
+  background-position: center center
+  background-size: cover
+  background-repeat: no-repeat
+  backface-visibility: hidden
+  animation: bgWebSlide 8s linear infinite 0s
+  animation-timing-function: ease-in-out
+  background-image: url(img/bg_w.png)
+  height: 30vh
+@keyframes bgWebSlide
+  0%
+    background-image: url(img/bg_w.png)
+  25%
+    background-image: url(img/bg_w.png)
+  50%
     background-image: url(img/bg.png)
   75%
     background-image: url(img/bg.png)
   100%
-    background-image: url(img/bg.png)
-
-
+    background-image: url(img/bg_w.png)
+.button
+  height: 48px
+  width: 202px
+  background-color: rgba(226, 26, 26, 1)
+  color: rgba(225, 225, 225, 1)
+  border: none
+  font-size: 16px
+  line-height: 19.3px
+.height
+  height: 100%
+.heading
+  max-width: 839px
+  position: absolute
+  bottom: 20%
+  left: 61px
+.mask
+  &_height
+    height: 50vh
+  &_website
+    height: 25vh
 .container
-  max-width: 1440px
+  padding-left: 66px
+  padding-right: 66px
+  max-width: 1920px
   margin: auto
-header, .block
+.logo
+  margin-top: 12px
+h1
+  font-size: 40px
+  line-height: 48px
+  color: $color-white
+h2
+  font-size: 34px
+  line-height: 37.4px
+h3
+  font-size: 20px
+  line-height: 24px
+  color: $color-white
+h4
+  font-size: 16px
+  line-height: 19.3px
+  color: rgb(130, 130, 130)
+
+.svg:hover
+    .svg_color
+      filter: invert(26%) sepia(71%) saturate(4360%) hue-rotate(350deg) brightness(89%) contrast(100%)
+header
+  font-size: 12px
+  line-height: 14.58px
+  color: $color-white
+  padding-top: 13px
+  padding-bottom: 13px
+.block
   display: flex
   justify-content: space-between
   align-items: center
-nav li
-  padding-left: 33px
-  padding-right: 33px
+  &_top-border
+    border-top: 1px solid rgb(118, 125, 137)
+  &_news
+    margin-top: 60px
+    & h2
+      margin: 0
+    & a
+      color: black
+  & a:hover
+    color: $color-red
+  &_tg
+    margin-top: 20px
+    margin-bottom: 40px
+    min-height: 69px
+    padding-left: 20px
+    padding-right: 20px
+    & h3
+      color: black
+      font-size: 24px
+      line-height: 28.94px
+  &_around
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    &--margin
+      margin: 40px -10px
+  &_info
+    flex: 1 1 auto
+    margin: 0 10px 20px
+    width: 27%
+    height: 256px
+    & a
+      height: 100%
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      & h2, p
+        margin: 20px
+    &--bgWhite
+      background-color: $color-white
+      & a:hover
+        & h2
+          color: $color-red
+      & p
+        font-size: 16px
+        line-height: 20.8px
+        color: rgba(118, 125, 137, 1)
+      & h2
+        color: black
+    &--bgImg
+      & .svg_color
+        filter: $svg-white
+      & p
+        font-size: 16px
+        line-height: 20.8px
+        color: $color-white
+      & h2
+        color: $color-white
+  &_center
+    display: flex
+    justify-content: center
+    align-items: center
+
+.head_span
+  background-color: rgba(226, 26, 26, 1)
+
+nav
+  position: relative
+  & ul::before
+    content: ''
+    display: block
+    position: absolute
+    top: 45px
+    width: 94.6%
+    left: 2.7%
+    border-bottom: 1px solid rgba(118, 125, 137, 1)
+    z-index: -1
+.nav
+  padding: 0
+  &_active
+    border-bottom: 1px solid $color-white
+    padding-bottom: 18px
+  & li
+    padding-left: 2.29vw
+    padding-right: 2.29vw
+    & a
+      font-size: 12px
+      line-height: 14.58px
+      color: $color-white
+.bgImg
+  background-position: center center
+  background-size: cover
+  background-repeat: no-repeat
+  &_job
+    background-image: url(img/job.png)
+  &_advertisement
+    background-image: url(img/advertisement.png)
+  &_schedule
+    background-image: url(img/schedule.png)
+.icon_top
+  display: flex
+  align-items: start
+  height: 100%
+  & img
+    margin: 30px 20px
+.svg_search
+  & .svg_color
+    filter: $svg-white
+.visually_impaired
+  padding-right: 2.08vw
+  color: $color-white
+  & .svg_color
+    filter: $svg-white
+
+  & p
+    padding-right: 0.69vw
+.card
+  border-bottom: 1px solid rgba(211, 211, 211, 1)
+  &_bottom
+    border: none
+    padding-bottom: 100px
+  &_padding
+    position: relative
+    display: flex
+    flex-direction: column
+    flex: 1 1 auto
+    margin: 0 10px 20px
+    padding: 20px
+    background-color: $color-white
+    & > a
+      position: absolute
+      bottom: 0
+      margin-bottom: 20px
+      width: 97%
+    & > a:hover
+      & h4
+        color: $color-red
+    & h2
+      margin-top: 20px
+      margin-bottom: 10px
+  & a:hover
+    & p
+      color: $color-red
+  & a
+    color: black
+    font-size: 16px
+    line-height: 20.8px
+    letter-spacing: 0.01em
+
+    & p
+      margin: 20px 0
+      max-width: 400px
+
+  &_date
+    color: $color-red
+
+  &_time
+    color: $color-gray
+    padding-left: 13px
+  &_news
+    background-color: $color-white
+    display: flex
+    flex-direction: column
+    flex: 1 1 auto
+    margin: 0 10px 20px
+    width: 27%
+    &-margin
+      margin: 40px -10px 75px  -10px
+    & p
+      margin: 20px
+    &-block
+      margin: 0 20px
+      min-height: 200px
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+    &-color
+      color: $color-gray
+    &-wrap
+      flex-wrap: wrap
+.news_bg
+  background-color:  rgb(70, 74, 83)
+  position: absolute
+  height: 158px
+  width: 100%
+  z-index: -5
+  left: 0
+  bottom: -75px
+.position_relative
+  position: relative
+
+
+.application
+  max-width: 500px
+  &_block
+    position: absolute
+    bottom: -310px
+    width: 85%
+  & h2, h4
+    color: $color-white
+  &_bg
+    margin-top: 100px
+    margin-bottom: 20px
+    position: relative
+    background-image: url(img/application.png)
+    z-index: -5
+    width: 100%
+    height: 311px
+    background-position: center center
+    background-size: cover
+    background-repeat: no-repeat
+    backface-visibility: hidden
+footer
+  padding-top: 3px
+  background-color: rgb(70, 74, 83)
+  .svg_color
+    filter: invert(49%) sepia(16%) saturate(277%) hue-rotate(179deg) brightness(97%) contrast(84%)
+.footer
+  &_margin
+    margin: 0 40px -10px
+  &_contact
+    max-width: 300px
+    min-height: 64px
+    & a, h4, h3
+      color: $color-white
+      margin-bottom: 0
+    & p
+      margin: 0
+      color: $color-gray
+  &_block
+    padding-top: 60px
+    flex: 1 1 auto
+    margin: 0 10px 20px
+    width: 27%
+    &-child
+      margin-bottom: 50px
+.copyright, .copyright a
+
+  font-size: 12px
+  line-height: 18px
+  letter-spacing: 0.01em
+  text-align: left
+  color: rgb(118, 125, 137)
+.copyright
+  &_margin
+    margin: 40px 0 -10px
+  &_block
+    padding-top: 40px
+    flex: 1 1 auto
+    margin: 0 10px 40px
+    width: 27%
+  &_flex
+    display: flex
+  &_icon
+    display: flex
+    justify-content: center
+    align-items: center
+    padding-left: 18px
+
+  &_width
+    max-width: 90px
+  & a:hover
+    color: $color-red
+
+.content
+  width: 68%
+  &_nav
+    width: 32%
+    background-color: $color-white
+    & a
+      color: black
+    & a:hover
+      color: $color-red
+
+@media (max-width: 1200px)
+  .nav li
+    padding-left: 1.5vw
+    padding-right: 1.5vw

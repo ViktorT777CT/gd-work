@@ -3,22 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="style/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="bg_slider"></div>
+
+
+
     <section class="container">
-        <header>
+        <header class="block">
             <div class="block">
-                <div class="logo">
-                    <img src="img/logo.png">
+                <div class="logo block_center">
+                    <img src="img/logo.svg">
                 </div>
-                <nav class="block">
+                <nav class="block nav_border">
                     <ul class="block nav">
-                        <li><a href="#">Главная</a></li>
+                        <li><a href="#"  class="nav_active">Главная</a></li>
                         <li><a href="#">Расписание</a></li>
                         <li><a href="#">Пассажирам</a></li>
                         <li><a href="#">Купить билет</a></li>
@@ -27,19 +29,441 @@
                     </ul>
                 </nav>
             </div>
-            <div>
+            <div class="block">
                 <div>
-                    <button>
-                        Версия для слабовидящих <img src="img/blind.png">
-                    </button>
+                    <a href="#" class="svg block visually_impaired">
+                        <p>Версия для слабовидящих</p>
+                        <img src="img/blind.svg" class="svg_color">
+                    </a>
                 </div>
-                <div class="search">
-                    <img src="img/search.png">
+                <div>
+                    <a href="#" class="svg block_center svg_search">
+                        <img src="img/search.svg" class="svg_color">
+                    </a>
+
                 </div>
             </div>
         </header>
-    </section>
 
+    </section>
+    <div id="bg_slider-main">
+        <div class="container position_relative height">
+            <div class="heading">
+                <h1>
+                    АО «<span class="head_span">Калининградская</span> пригородная пассажирская компания»
+                </h1>
+                <h3>Комфорт, безопасность, экологичость</h3>
+                <button class="button block_center">
+                    Подробнее
+                </button>
+            </div>
+        </div>
+
+    </div>
+    <div class="mask_height"></div>
+    <section class="container">
+        <div class="block_around block_around--margin">
+            <div class="block_info block_info--bgWhite">
+                <a href="#" class="svg">
+                    <div class="block">
+                        <div>
+                            <h2>Купить билет</h2>
+                        </div>
+                        <div class="icon_top">
+                            <img src="img/arrow.svg" alt="" class="svg_color">
+                        </div>
+                    </div>
+                    <div>
+                        <p>Вы можете приобрести <br>
+                            билеты прямо сейчас!</p>
+                    </div>
+                </a>
+            </div>
+            <div class="block_info block_info--bgImg bgImg_schedule bgImg">
+                <a href="#" class="svg">
+                    <div class="block">
+                        <div>
+                            <h2>Расписание движения пригородных поездов</h2>
+                        </div>
+                        <div class="icon_top">
+                            <img src="img/arrow.svg" alt="" class="svg_color">
+                        </div>
+
+                    </div>
+                    <div>
+                        <p></p>
+                    </div>
+                </a>
+            </div>
+            <div class="block_info block_info--bgWhite">
+                <a href="#" class="svg">
+                    <div class="block">
+                        <div>
+                            <h2>Пассажирам</h2>
+                        </div>
+                        <div class="icon_top">
+                            <img src="img/arrow.svg" alt="" class="svg_color">
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            Информация о правилах и стоимости <br>
+                            проезда, способах оформления билетов, <br>
+                            льготах на проезд и т.д.
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <div class="block_info block_info--bgImg bgImg_job bgImg">
+                <a href="#" class="svg">
+                    <div class="block">
+                        <div>
+                            <h2>Вакансии</h2>
+                        </div>
+                        <div class="icon_top">
+                            <img src="img/arrow.svg" alt="" class="svg_color">
+                        </div>
+                    </div>
+                    <div>
+                        <p>Открытые вакансии АО «Калининградская <br>
+                            пригородная пассажирская компания»</p>
+                    </div>
+                </a>
+            </div>
+            <div class="block_info block_info--bgWhite">
+                <a href="#" class="svg">
+                    <div class="block">
+                        <div>
+                            <h2>Общественная <br>
+                                приемная</h2>
+                        </div>
+                        <div class="icon_top">
+                            <img src="img/arrow.svg" alt="" class="svg_color">
+                        </div>
+                    </div>
+                    <div>
+                        <p>Поделитесь мнением о работе <br>
+                            пригородного пассажирского комплекса <br>
+                            и качестве предоставляемых услуг.</p>
+                    </div>
+                </a>
+            </div>
+            <div class="block_info block_info--bgImg bgImg_advertisement bgImg">
+                <a href="#" class="svg">
+                    <div class="block">
+                        <div>
+                            <h2>Рекламные
+                                возможности </h2>
+                        </div>
+
+                        <div class="icon_top">
+                            <img src="img/arrow.svg" alt="" class="svg_color">
+                        </div>
+
+                    </div>
+                    <div>
+                        <p>Разместите свою рекламу на обратной <br>
+                            стороне билета на пригородный поезд.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="container">
+        <a href="#" class="svg">
+            <div class="block block_info--bgWhite block_tg">
+                <div>
+                    <h3>Подписывайтесь на наш официальный Telegram канал «Калининградская Ласточка»!</h3>
+                </div>
+                <div>
+                    <img src="img/telegram.svg" class="svg_color">
+                </div>
+            </div>
+        </a>
+    </section>
+    <section class="container">
+        <div class="block_around block_around--margin">
+            <div class="card_padding">
+                <h2>Изменения в расписании</h2>
+                <div class="card">
+                    <a href="#" >
+                        <p>Расписание калининградских пригородных поездов
+                            изменяется 8 марта</p>
+                    </a>
+                        <p>
+                            <span class="card_date">06.03.2023</span>
+                            <span class="card_time">07:25</span>
+                        </p>
+
+                </div>
+                <div class="card">
+                    <a href="#" >
+                        <p>Расписание калининградских пригородных
+                            поездов изменяется с 23 по 26 февраля</p>
+                    </a>
+                        <p>
+                            <span class="card_date">20.02.2023</span>
+                            <span class="card_time">06:30</span>
+                        </p>
+
+                </div>
+                <div class="card">
+                    <a href="#" >
+                        <p>Изменения в расписании движения
+                            пригородных поездов с 9 января</p>
+                    </a>
+                        <p>
+                            <span class="card_date">06.01.2023</span>
+                            <span class="card_time">09:55</span>
+                        </p>
+
+                </div>
+                <div class="card card_bottom">
+                    <a href="#" >
+                        <p>Расписание калининградских пригородных
+                            поездов изменяется 8 декабря</p>
+                    </a>
+                        <p>
+                            <span class="card_date">06.12.2022</span>
+                            <span class="card_time">07:25</span>
+                        </p>
+
+                </div>
+                <a href="#" class="svg">
+                    <div class="block">
+                        <div>
+                            <h4>Все новости</h4>
+                        </div>
+                        <div class="icon_top">
+                            <img src="img/arrow.svg" alt="" class="svg_color">
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="card_padding">
+                <h2>Последняя информация</h2>
+                <div class="card">
+                    <a href="#" >
+                        <p>Миллион пассажиров воспользовались пригородным
+                            железнодорожным транспортом с начала 2023 года
+                            в Калининградской области</p>
+                    </a>
+                        <p>
+                            <span class="card_date">24.03.2023</span>
+                            <span class="card_time">08:57</span>
+                        </p>
+
+                </div>
+                <div class="card">
+                    <a href="#" >
+                        <p>Открыта вакансия билетного кассира
+                            на железнодорожном транспорте</p>
+                    </a>
+                        <p>
+                            <span class="card_date">20.03.2023</span>
+                            <span class="card_time">07:45</span>
+                        </p>
+
+                </div>
+                <div class="card">
+                    <a href="#" >
+                        <p>Зеленоградским «Деловым экспрессом» за три
+                            года воспользовались 110,3 тыс. пассажиров</p>
+                    </a>
+                        <p>
+                            <span class="card_date">02.03.2023</span>
+                            <span class="card_time">08:37</span>
+                        </p>
+
+                </div>
+                <div class="card card_bottom">
+                    <a href="#" >
+                        <p>Открыта вакансия разъездного билетного
+                            контролёра-кассира на железнодорожном транспорте</p>
+                    </a>
+                        <p>
+                            <span class="card_date">09.02.2023</span>
+                            <span class="card_time">12:24</span>
+                        </p>
+
+                </div>
+                <a href="#" class="svg">
+                    <div class="block">
+                        <div>
+                            <h4>Все новости</h4>
+                        </div>
+                        <div class="icon_top">
+                            <img src="img/arrow.svg" alt="" class="svg_color">
+                        </div>
+                    </div>
+
+                </a>
+            </div>
+        </div>
+
+    </section>
+    <section class="application_bg">
+        <div class="container position_relative">
+            <div class="block application_block">
+                <div class="application">
+                    <h2>
+                        Мобильное приложение «РЖД Пассажирам»
+                    </h2>
+                    <h4>Покупайте билеты быстро и удобно.</h4>
+                    <button class="button block_center">
+                        Подробнее
+                    </button>
+                </div>
+                <div class="block">
+                    <img src="style/img/application_img.svg">
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section class="position_relative">
+        <div class="container">
+            <div class="block_news-height">
+                <div class="block block_news">
+                    <h2>Новости</h2>
+                    <a href="#" class="">Все новости</a>
+                </div>
+                <div class="block_around card_news-margin">
+                    <div class="card_news">
+                        <div class="card card_news-block">
+                            <a href="#">
+                                <p>Миллион пассажиров воспользовались пригородным
+                                    железнодорожным транспортом с начала 2023 года
+                                    в Калининградской области</p>
+                            </a>
+                            <a href="#">
+                                <p class="card_news-color">Новости · Пассажирам</p>
+                            </a>
+                        </div>
+                        <p>
+                            <span class="card_date">24.03.2023</span>
+                            <span class="card_time">08:57</span>
+                        </p>
+                    </div>
+                    <div class="card_news">
+                        <div class="card card_news-block">
+                            <a href="#">
+                                <p>Открыта вакансия билетного кассира на
+                                    железнодорожном транспорте</p>
+                            </a>
+                            <a href="#">
+                                <p class="card_news-color">Новости · Пассажирам</p>
+                            </a>
+                        </div>
+                        <p>
+                            <span class="card_date">20.03.2023</span>
+                            <span class="card_time">07:45</span>
+                        </p>
+                    </div>
+                    <div class="card_news">
+                        <div class="card card_news-block">
+                            <a href="#">
+                                <p>Зеленоградским «Деловым экспрессом»
+                                    за три года воспользовались 110,3 тыс. пассажиров</p>
+                            </a>
+                            <a href="#">
+                                <p class="card_news-color">Новости · Пассажирам</p>
+                            </a>
+                        </div>
+                        <p>
+                            <span class="card_date">02.03.2023</span>
+                            <span class="card_time">08:03</span>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="news_bg"></div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="block_top-border  block_around footer_margin">
+                <div class="footer_block">
+                    <div class="footer_contact footer_block-child">
+                        <h3><a href="tel:8 800 775 0000">8 800 775 0000</a></h3>
+                        <p>звонок бесплатный для всех регионов РФ</p>
+                    </div>
+                    <div class="footer_contact">
+                        <h4>Адрес компании</h4>
+                        <a href="#">
+                            <p>236039, г. Калининград, Суворова ул., д. 1, лит. А, а, а, 1, пом. 25</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer_block">
+                    <div class="footer_contact footer_block-child">
+                        <h3><a href="tel:84012644869 ">8 (4012) 644-869 </a></h3>
+                        <p>приемная АО «КППК»</p>
+                    </div>
+                    <div class="footer_contact">
+                        <a href="#">
+                            <p>Лицензия на право осуществления перевозки
+                                пассажиров и багажа железнодорожным
+                                транспортом серия ПП № 3907323</p>
+                        </a>
+
+                    </div>
+                </div>
+                <div class="footer_block">
+                    <div class="footer_contact footer_block-child">
+                        <h3><a href="mailto:KLGD-PPK@YANDEX.RU">KLGD-PPK@YANDEX.RU</a></h3>
+                        <p>электронная почта</p>
+                    </div>
+                    <div class="footer_contact">
+                        <a href="#">
+                            <p>Политика обработки персональных данных</p>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="block_top-border  block_around copyright_margin">
+                <div class="copyright_block">
+                    <div class="copyright copyright_width">
+                        <p>© АО «КППК»
+                            2011-2023 </p>
+                    </div>
+                </div>
+                <div class="copyright_block"></div>
+                <div class="copyright_block">
+                    <div class="copyright_flex">
+                        <div class="copyright">
+                            <p>
+                                При использовании любых материалов </br>
+                                ссылка на <a href="#">kppk39.ru</a>  обязательна
+                            </p>
+                        </div>
+                        <div class="copyright_icon">
+                            <a href="" class="svg">
+                                <img src="img/telegram.svg" class="svg_color">
+                            </a>
+                        </div>
+                        <div class="copyright_icon">
+                            <a href="https://play.google.com" class="svg">
+                                <img src="img/googlePlay.svg" class="svg_color">
+                            </a>
+                        </div>
+                        <div class="copyright_icon">
+                            <a href="https://www.apple.com/" class="svg">
+                                <img src="img/appStore.svg" class="svg_color">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </footer>
 
 </body>
 </html>

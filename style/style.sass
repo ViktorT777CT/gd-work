@@ -207,6 +207,34 @@ nav
       font-size: 12px
       line-height: 14.58px
       color: $color-white
+  &_company
+    padding: 0
+    & li
+      padding: 20px 0
+    & p
+      padding: 0 20px
+      margin: 0
+      position: relative
+    &-bottom
+      padding-bottom: 40px !important
+    &-border:after
+        content: ''
+        display: block
+        position: absolute
+        left: 20px
+        right: 20px
+        bottom: -20px
+        z-index: 1
+        border-bottom: 1px solid rgba(211, 211, 211, 1)
+    & a
+
+
+    &-active
+      & p
+        color: $color-red
+        border-left: 1px solid rgb(195, 27, 28, 1)
+
+
 .bgImg
   background-position: center center
   background-size: cover
@@ -306,6 +334,11 @@ nav
   z-index: -5
   left: 0
   bottom: -75px
+  &-height
+    height: 100%
+  &-border
+    height: 99%
+    border-bottom: 1px solid rgb(118, 125, 137)
 .position_relative
   position: relative
 
@@ -331,13 +364,12 @@ nav
     background-repeat: no-repeat
     backface-visibility: hidden
 footer
-  padding-top: 3px
   background-color: rgb(70, 74, 83)
   .svg_color
     filter: invert(49%) sepia(16%) saturate(277%) hue-rotate(179deg) brightness(97%) contrast(84%)
 .footer
   &_margin
-    margin: 0 40px -10px
+    margin: 0 0 40px 0
   &_contact
     max-width: 300px
     min-height: 64px
@@ -384,13 +416,24 @@ footer
 
 .content
   width: 68%
+  margin-left: 20px
   &_nav
     width: 32%
-    background-color: $color-white
+    &-bg
+      background-color: $color-white
     & a
       color: black
     & a:hover
       color: $color-red
+  & img
+    width: 100%
+ol.with-parentheses
+    counter-reset: myCounter
+    list-style: none
+    padding: 0
+    & > li::before
+      content: counter( myCounter ) ') '
+      counter-increment: myCounter
 
 @media (max-width: 1200px)
   .nav li

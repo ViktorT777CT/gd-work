@@ -271,6 +271,34 @@ nav ul::before {
   line-height: 14.58px;
   color: rgb(255, 255, 255);
 }
+.nav_company {
+  padding: 0;
+}
+.nav_company li {
+  padding: 20px 0;
+}
+.nav_company p {
+  padding: 0 20px;
+  margin: 0;
+  position: relative;
+}
+.nav_company-bottom {
+  padding-bottom: 40px !important;
+}
+.nav_company-border:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: -20px;
+  z-index: 1;
+  border-bottom: 1px solid rgb(211, 211, 211);
+}
+.nav_company-active p {
+  color: rgb(226, 26, 26);
+  border-left: 1px solid rgb(195, 27, 28);
+}
 
 .bgImg {
   background-position: center center;
@@ -397,6 +425,13 @@ nav ul::before {
   left: 0;
   bottom: -75px;
 }
+.news_bg-height {
+  height: 100%;
+}
+.news_bg-border {
+  height: 99%;
+  border-bottom: 1px solid rgb(118, 125, 137);
+}
 
 .position_relative {
   position: relative;
@@ -428,7 +463,6 @@ nav ul::before {
 }
 
 footer {
-  padding-top: 3px;
   background-color: rgb(70, 74, 83);
 }
 footer .svg_color {
@@ -436,7 +470,7 @@ footer .svg_color {
 }
 
 .footer_margin {
-  margin: 0 40px -10px;
+  margin: 0 0 40px 0;
 }
 .footer_contact {
   max-width: 300px;
@@ -495,9 +529,12 @@ footer .svg_color {
 
 .content {
   width: 68%;
+  margin-left: 20px;
 }
 .content_nav {
   width: 32%;
+}
+.content_nav-bg {
   background-color: rgb(255, 255, 255);
 }
 .content_nav a {
@@ -505,6 +542,19 @@ footer .svg_color {
 }
 .content_nav a:hover {
   color: rgb(226, 26, 26);
+}
+.content img {
+  width: 100%;
+}
+
+ol.with-parentheses {
+  counter-reset: myCounter;
+  list-style: none;
+  padding: 0;
+}
+ol.with-parentheses > li::before {
+  content: counter(myCounter) ") ";
+  counter-increment: myCounter;
 }
 
 @media (max-width: 1200px) {

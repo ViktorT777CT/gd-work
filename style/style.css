@@ -546,6 +546,9 @@ footer .svg_color {
 .content img {
   width: 100%;
 }
+.content p {
+  margin: 30px 0;
+}
 
 ol.with-parentheses {
   counter-reset: myCounter;

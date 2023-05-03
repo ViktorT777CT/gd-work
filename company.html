@@ -7,25 +7,33 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dist/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="dist/assets/owl.theme.default.min.css">
 </head>
 <body>
 
-<section class="container ">
+<!-- шапка -->
+<section class="container header_mobile">
   <header class="block">
     <div class="block">
       <div class="logo block_center">
         <img src="img/logo.svg">
       </div>
+      <input type="checkbox" id="burger">
+      <label for="burger">
+
+      </label>
       <nav class="block nav_border">
         <ul class="block nav">
-          <li><a href="#"  class="nav_active">Главная</a></li>
-          <li><a href="#">Расписание</a></li>
-          <li><a href="#">Пассажирам</a></li>
-          <li><a href="#">Купить билет</a></li>
-          <li><a href="#">О компании</a></li>
-          <li><a href="#">Контакты</a></li>
+          <li><a href="#" class="nav_active"><p>Главная</p></a></li>
+          <li><a href="#"><p>Расписание</p></a></li>
+          <li><a href="#"><p>Пассажирам</p></a></li>
+          <li><a href="#"><p>Купить билет</p></a></li>
+          <li><a href="#"><p>О компании</p></a></li>
+          <li><a href="#"><p>Контакты</p></a></li>
         </ul>
       </nav>
+
     </div>
     <div class="block">
       <div>
@@ -38,12 +46,12 @@
         <a href="#" class="svg block_center svg_search">
           <img src="img/search.svg" class="svg_color">
         </a>
-
       </div>
     </div>
   </header>
-</section>
 
+</section>
+<!-- слайдер с текстом на нем отличается от главной страници-->
 <div id="bg_slider-website">
   <div class="container position_relative height">
     <div class="heading">
@@ -54,9 +62,12 @@
   </div>
 </div>
 <div class="mask_website"></div>
-<section class="container copyright_flex">
+<!--меню, контент-->
+<section class="container content_flex">
   <div class="content_nav">
     <div class="content_nav-bg">
+      <input type="checkbox" id="content_nav-head">
+      <label class="content_nav-head" for="content_nav-head"> О компании</label>
       <ul class="nav_company">
         <a href="#">
           <li class="nav_company-active">
@@ -176,7 +187,7 @@
 
   </div>
 </section>
-
+<!-- подписаться на телеграм-->
 <section class="container">
   <a href="#" class="svg">
     <div class="block block_info--bgWhite block_tg">
@@ -189,61 +200,70 @@
     </div>
   </a>
 </section>
+<!-- футер для всех страниц одинаковый, на главной странице серый фон находится в блоке новости-->
 <footer>
   <div class="container">
-    <div class="block_around footer-margin">
+    <div class="block_between footer_margin">
       <div class="footer_block">
-        <div class="footer_contact footer_block-child">
-          <h3><a href="tel:8 800 775 0000">8 800 775 0000</a></h3>
-          <p>звонок бесплатный для всех регионов РФ</p>
+        <div class="footer_block-grid">
+          <div class="footer_contact">
+            <h3><a href="tel:8 800 775 0000">8 800 775 0000</a></h3>
+            <p>звонок бесплатный для всех регионов РФ</p>
+          </div>
         </div>
-        <div class="footer_contact">
-          <h4>Адрес компании</h4>
-          <a href="#">
-            <p>236039, г. Калининград, Суворова ул., д. 1, лит. А, а, а, 1, пом. 25</p>
-          </a>
+        <div class="footer_block-grid">
+          <div class="footer_contact">
+            <h3><a href="tel:84012644869 ">8 (4012) 644-869 </a></h3>
+            <p>приемная АО «КППК»</p>
+          </div>
+        </div>
+        <div class="footer_block-grid">
+          <div class="footer_contact">
+            <h3><a href="mailto:KLGD-PPK@YANDEX.RU">KLGD-PPK@YANDEX.RU</a></h3>
+            <p>электронная почта</p>
+          </div>
         </div>
       </div>
       <div class="footer_block">
-        <div class="footer_contact footer_block-child">
-          <h3><a href="tel:84012644869 ">8 (4012) 644-869 </a></h3>
-          <p>приемная АО «КППК»</p>
+        <div class="footer_block-grid">
+          <div class="footer_contact">
+            <h4>Адрес компании</h4>
+            <a href="#">
+              <p>236039, г. Калининград, Суворова ул., д. 1, лит. А, а, а, 1, пом. 25</p>
+            </a>
+          </div>
         </div>
-        <div class="footer_contact">
-          <a href="#">
-            <p>Лицензия на право осуществления перевозки
-              пассажиров и багажа железнодорожным
-              транспортом серия ПП № 3907323</p>
-          </a>
-
+        <div class="footer_block-grid">
+          <div class="footer_contact footer_license">
+            <a href="#">
+              <p>Лицензия на право осуществления перевозки
+                пассажиров и багажа железнодорожным
+                транспортом серия ПП № 3907323</p>
+            </a>
+          </div>
         </div>
-      </div>
-      <div class="footer_block">
-        <div class="footer_contact footer_block-child">
-          <h3><a href="mailto:KLGD-PPK@YANDEX.RU">KLGD-PPK@YANDEX.RU</a></h3>
-          <p>электронная почта</p>
-        </div>
-        <div class="footer_contact">
-          <a href="#">
-            <p>Политика обработки персональных данных</p>
-          </a>
-
+        <div class="footer_block-grid">
+          <div class="footer_contact">
+            <a href="#">
+              <p>Политика обработки персональных данных</p>
+            </a>
+          </div>
         </div>
       </div>
     </div>
-    <div class="block_top-border  block_around copyright_margin">
-      <div class="copyright_block">
+    <div class="block_top-border  block_between copyright_margin">
+      <div class="copyright_block copyright_order1">
         <div class="copyright copyright_width">
           <p>© АО «КППК»
             2011-2023 </p>
         </div>
       </div>
-      <div class="copyright_block"></div>
-      <div class="copyright_block">
+      <div class="copyright_block mobile_none copyright_order2"></div>
+      <div class="copyright_block copyright_order3">
         <div class="copyright_flex">
           <div class="copyright">
             <p>
-              При использовании любых материалов </br>
+              При использовании любых материалов
               ссылка на <a href="#">kppk39.ru</a>  обязательна
             </p>
           </div>
@@ -271,6 +291,8 @@
 
 
 </footer>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="/dist/owl.carousel.min.js"></script>
+<script src="js/my_js.js"></script>
 </body>
 </html>

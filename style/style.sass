@@ -2,7 +2,7 @@ $color-white: rgb(255, 255, 255)
 $color-red: rgb(226, 26, 26)
 $color-gray: rgb(118, 125, 137)
 $svg-white: invert(100%) sepia(0%) saturate(7500%) hue-rotate(19deg) brightness(99%) contrast(102%)
-
+$svg-black: invert(0%) sepia(95%) saturate(0%) hue-rotate(88deg) brightness(96%) contrast(104%)
 
 body
   font-family: 'IBM Plex Sans', arial
@@ -138,7 +138,7 @@ header
       color: black
       font-size: 24px
       line-height: 28.94px
-  &_around
+  &_between
     display: flex
     justify-content: space-between
     flex-wrap: wrap
@@ -155,7 +155,7 @@ header
       flex-direction: column
       justify-content: space-between
       & h2, p
-        margin: 20px
+        margin: 20px 0 20px 20px
     &--bgWhite
       background-color: $color-white
       & a:hover
@@ -198,8 +198,14 @@ nav
 .nav
   padding: 0
   &_active
+    position: relative
+  &_active:before
+    content: ''
+    position: absolute
+    top: 33px
+    width: 100%
     border-bottom: 1px solid $color-white
-    padding-bottom: 18px
+
   & li
     padding-left: 2.29vw
     padding-right: 2.29vw
@@ -207,6 +213,8 @@ nav
       font-size: 12px
       line-height: 14.58px
       color: $color-white
+      & p
+        margin: 0
   &_company
     padding: 0
     & li
@@ -310,10 +318,9 @@ nav
     display: flex
     flex-direction: column
     flex: 1 1 auto
-    margin: 0 10px 20px
-    width: 27%
+    margin: 0 0px 20px 0px
     &-margin
-      margin: 40px -10px 75px  -10px
+      margin: 40px 0px 75px  0px
     & p
       margin: 20px
     &-block
@@ -345,6 +352,8 @@ nav
 
 .application
   max-width: 500px
+  &_img-mobile
+    display: none
   &_block
     position: absolute
     bottom: -310px
@@ -369,23 +378,25 @@ footer
     filter: invert(49%) sepia(16%) saturate(277%) hue-rotate(179deg) brightness(97%) contrast(84%)
 .footer
   &_margin
-    margin: 0 0 40px 0
+    margin: 0 -10px 60px -10px
   &_contact
-    max-width: 300px
+    max-width: 85%
     min-height: 64px
     & a, h4, h3
       color: $color-white
-      margin-bottom: 0
+      margin: 0
     & p
       margin: 0
       color: $color-gray
   &_block
     padding-top: 60px
-    flex: 1 1 auto
-    margin: 0 10px 20px
-    width: 27%
-    &-child
-      margin-bottom: 50px
+    display: flex
+    justify-content: space-between
+    width: 100%
+    &-grid
+      flex: 1 1 auto
+      width: 27%
+      margin: 0 10px 20px
 .copyright, .copyright a
 
   font-size: 12px
@@ -417,6 +428,8 @@ footer
 .content
   width: 68%
   margin-left: 20px
+  &_flex
+    display: flex
   &_nav
     width: 32%
     &-bg
@@ -436,8 +449,306 @@ ol.with-parentheses
     & > li::before
       content: counter( myCounter ) ') '
       counter-increment: myCounter
-
+#burger, [for=burger]
+  display: none
+.mobile_none
+  display: block
+[for=burger_news], #burger_news
+  display: none
+.content_nav-head, #content_nav-head
+  display: none
 @media (max-width: 1200px)
   .nav li
     padding-left: 1.5vw
     padding-right: 1.5vw
+@media (max-width: 992px)
+  [for=burger]
+    display: block
+    position: fixed
+    text-align: center
+    width: 20px
+    top: 10px
+    right: 45px
+    color: black
+    padding: 15px
+    &::before
+      content: url(img/burger.png)
+  #bg_slider-main
+    max-height: 367px
+  .mask_website
+    height: 31vh
+  #bg_slider-website, .mask_height
+    max-height: 365px
+  .header
+    &_mobile
+      z-index: 99
+      position: fixed
+      width: 100%
+      background-color: $color-white
+      padding: 0 !important
+      & .block
+        padding: 0
+  .visually_impaired
+    color: black
+    &:after
+      content: '|'
+      color: rgba(118, 125, 137, 1)
+
+    & .svg_color
+      filter: $svg-black
+      margin-right: 20px
+  .svg_search
+    margin-right: 130px
+    &:after
+      content: '|'
+      color: rgba(118, 125, 137, 1)
+
+    & .svg_color
+      filter: $svg-black
+      margin: 0 20px
+  .logo
+    background-color: red
+    margin: 0
+    & img
+      height: 63px
+      width: 86px
+  .nav
+    flex-direction: column
+    width: 100%
+    margin-bottom: 30vh
+    & li
+      margin: 0
+      width: 100%
+      padding: 0
+      border-bottom: 1px solid rgba(211, 211, 211, 1)
+      & a
+        font-size: 16px
+        line-height: 19px
+        color: black
+        & p
+          padding: 20px
+    &_active:before
+      display: none
+    & ul::before
+      display: none
+  nav
+    z-index: 99
+    box-shadow: 0 0 8px rgba(122,122,122,0.5)
+    background-color: $color-white
+    position: absolute
+    top: 70px
+    right: 0
+    width: 98%
+    color: black
+    display: none !important //none-должно быть
+    & ul:before
+      display: none
+
+  #burger:checked + label + nav
+    display: flex !important
+  #burger:checked + [for=burger]::before
+    content: url(img/burger_close.png)
+  .heading
+    bottom: 10%
+    & h1
+      margin-bottom: 10px
+    & h3
+      margin-top: 10px
+  .block
+    &_between--margin
+      margin: 40px 0
+      flex-direction: column
+    &_info
+      width: 100%
+      margin: 0 0 20px
+  .card
+    &_padding
+      margin: 0 0 20px 0
+    &_news-margin
+      margin-bottom: 0
+  .application
+    &_img-mobile
+      display: block
+      & img
+        width: 100%
+    &_block
+      bottom: 40px
+      left: 20px
+    &_bg
+      margin-top: 80px
+      margin-left: 66px
+      margin-right: 66px
+      width: auto
+      height: auto
+      background-image: none
+    &> .container
+      padding-left: 20px
+      padding-right: 20px
+  .mobile_none
+    display: none
+  .news_bg
+    height: 105px
+    bottom: 0
+  .footer
+    &_margin
+      margin: 0 0 60px 0
+    &_contact
+      max-width: 85%
+    &_block
+      padding-top: 40px
+      flex-direction: column
+      width: 50%
+      &-grid
+        width: 100%
+        margin: 0 0 20px
+  .copyright
+    &_flex
+      justify-content: space-between
+    &_block
+      margin-left: 0
+      margin-right: 0
+    &_icon
+      padding-left: 0
+    &_order1
+      order: 1
+    &_order2
+      order: 2
+    &_order3
+      order: 3
+  .content
+    margin: 0
+    width: 100%
+    &_nav
+      width: 100%
+      &-head
+        color: $color-red
+        display: flex
+        justify-content: space-between
+        padding: 20px
+      &-head:after
+        content: url(img/union-bottom.svg)
+    &_flex
+      display: block
+  .nav_company
+    max-height: 0
+    transition: max-height 0.5s ease-out
+    overflow: hidden
+  #content_nav-head:checked + [for=content_nav-head]:after
+    content: url(img/union-top.svg)
+  #content_nav-head:checked + [for=content_nav-head] + ul
+    max-height: 1000px
+    transition: max-height 0.5s ease-in
+@keyframes show
+  0%
+
+  100%
+
+
+@media (max-width: 576px)
+  .container
+    padding-left: 16px
+    padding-right: 16px
+  .visually_impaired
+    & p
+      display: none
+    & .svg_color
+      margin-right: 10px
+  .svg_search
+    margin-right: 105px
+    & .svg_color
+      margin-right: 10px
+      margin-left: 10px
+  [for=burger]
+    right: 18px
+  .mask_height
+    max-height: 540px
+    height: 540px
+  #bg_slider-main
+    max-height: 540px
+    height: 70vh
+    & h3
+      margin-bottom: 30px
+  h1
+    font-size: 26px
+    line-height: 31px
+  h2
+    font-size: 24px
+    line-height: 26.4px
+  h3
+    font-size: 16px
+    line-height: 19px
+  .heading
+    left: 16px
+  .footer
+    &_license
+      width: 100%
+      padding-top: 40px
+      margin-top: 30px
+      border-top: 1px solid rgb(118, 125, 137)
+    &_contact
+      min-height: 0
+      max-width: 100%
+      & h3, h4
+        margin-top: 20px
+        margin-bottom: 10px
+      & a p
+        margin-bottom: 20px
+    &_margin
+      padding-top: 40px
+      margin-bottom: 40px
+    &_block
+      padding: 0
+      width: 100%
+      &-grid
+        margin: 0
+  .copyright
+    width: 100%
+    &_icon a
+      display: flex
+      align-items: center
+    & p
+      width: 100%
+    &_flex
+      flex-wrap: wrap
+      justify-content: left
+    &_width
+      max-width: 100%
+    &_block
+      margin: 20px 0
+      padding: 0
+      width: 100%
+    &_margin
+      margin-top: 0
+      flex-direction: column
+    &_order1
+      border-top: 1px solid rgb(118, 125, 137)
+      order: 3
+    &_order3
+      order: 1
+  .application
+    &_block
+      bottom: -445px
+    &_img-mobile
+      display: none
+    &_bg
+      margin: 0
+      width: 100%
+      height: 500px
+      background-image: url(img/application567.png)
+  .burger_news-menu
+    display: none
+  [for=burger_news]
+    display: block
+  [for=burger_news]::before
+    content: url(img/ellipsis.svg)
+    filter: invert(55%) sepia(3%) saturate(114%) hue-rotate(13deg) brightness(92%) contrast(95%)
+  #burger_news:checked + [for=burger_news] + .burger_news-menu
+    position: absolute
+    right: 14px
+    top: 25px
+    background-color: $color-white
+    padding: 8px 82px 8px 10px
+    box-shadow: 0 3px 3px rgba(122,122,122,0.5)
+    display: block
+  #burger_news:checked + [for=burger_news]::before
+    filter: invert(26%) sepia(71%) saturate(4360%) hue-rotate(350deg) brightness(89%) contrast(100%)

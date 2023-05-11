@@ -592,13 +592,13 @@ ol.with-parentheses > li::before {
   display: none;
 }
 
-@media (max-width: 1200px) {
+@media screen and (max-width: 1200px) {
   .nav li {
     padding-left: 1.5vw;
     padding-right: 1.5vw;
   }
 }
-@media (max-width: 992px) {
+@media screen and (max-width: 992px) {
   [for=burger] {
     display: block;
     position: fixed;
@@ -658,7 +658,7 @@ ol.with-parentheses > li::before {
     margin: 0;
   }
   .logo img {
-    height: 63px;
+    height: 64px;
     width: 86px;
   }
   .nav {
@@ -824,7 +824,7 @@ ol.with-parentheses > li::before {
     transition: max-height 0.5s ease-in;
   }
 }
-@media (max-width: 576px) {
+@media screen and (max-width: 576px) {
   .container {
     padding-left: 16px;
     padding-right: 16px;
@@ -965,6 +965,9 @@ ol.with-parentheses > li::before {
   }
   #burger_news:checked + [for=burger_news]::before {
     filter: invert(26%) sepia(71%) saturate(4360%) hue-rotate(350deg) brightness(89%) contrast(100%);
+  }
+  .block_info {
+    height: 220px;
   }
 }
 

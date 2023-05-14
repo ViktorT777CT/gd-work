@@ -9,14 +9,17 @@ body
   margin: 0
   padding: 0
   background-color: rgb(245, 245, 245)
+  position: relative
 a
   text-decoration: none
 li
   list-style-type: none
-
+.header_mobile
+  position: relative
+  z-index: 99
 #bg_slider-main
   position: absolute
-  z-index: -5
+  z-index: 5
   width: 100%
   top: 0
   background-position: center center
@@ -40,7 +43,7 @@ li
     background-image: url(img/bg.png)
 #bg_slider-website
   position: absolute
-  z-index: -5
+  z-index: 5
   top: 0
   width: 100%
   background-position: center center
@@ -63,6 +66,9 @@ li
   100%
     background-image: url(img/bg_w.png)
 .button
+  cursor: pointer
+  position: relative
+  z-index: 100
   height: 48px
   width: 202px
   background-color: rgba(226, 26, 26, 1)
@@ -70,6 +76,10 @@ li
   border: none
   font-size: 16px
   line-height: 19.3px
+  &:hover
+    background-color: rgba(195, 27, 28, 1)
+  &:active
+    background-color: rgba(130, 130, 130, 1)
 .height
   height: 100%
 .heading
@@ -242,17 +252,23 @@ nav
         color: $color-red
         border-left: 1px solid rgb(195, 27, 28, 1)
 
-
-.bgImg
-  background-position: center center
-  background-size: cover
-  background-repeat: no-repeat
-  &_job
-    background-image: url(img/job.png)
-  &_advertisement
-    background-image: url(img/advertisement.png)
-  &_schedule
-    background-image: url(img/schedule.png)
+.bgImg a
+  position: relative
+.bgImg-position
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    height: 100%
+    overflow: hidden
+    & > img
+      position: absolute
+      z-index: -10
+      top: 0
+      left: -50%
+      right: -50%
+      bottom: 0
+      margin: auto
 .icon_top
   display: flex
   align-items: start
@@ -365,7 +381,7 @@ nav
     margin-bottom: 20px
     position: relative
     background-image: url(img/application.png)
-    z-index: -5
+    z-index: 1
     width: 100%
     height: 311px
     background-position: center center
@@ -477,8 +493,10 @@ ol.with-parentheses
     max-height: 367px
   .mask_website
     height: 31vh
+
   #bg_slider-website, .mask_height
     max-height: 365px
+
   .header
     &_mobile
       z-index: 99
